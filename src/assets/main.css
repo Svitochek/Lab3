@@ -1,35 +1,32 @@
-@import './base.css';
+body {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 40px 20px;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+button {
+	background-color: #113e6a;
+	opacity: 0.8;
+	border: 1px solid #a48375;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 20px;
+	color: #ffff;
+	font-size: 16px;
+	margin-right: 1em;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+button:hover {
+	opacity: 0.9;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+h1 {
+	font-weight: 600;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+* {
+	box-sizing: border-box;
 }
