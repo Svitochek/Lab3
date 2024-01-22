@@ -3,21 +3,30 @@
     <h1>Население РФ</h1>
     <input type="file" @change="loadFile" />
     <h2 className="table-title" v-if="populationData.data.length">Распределение по субьектам (тысяч человек)</h2>
+    
+     <!-- вывод данных о снижении населении -->
     <p v-if="populationData.data.length">Субьект с самым большим снижением населения — <span style="font-weight:600;">{{mostReduced.area}}: <span style="color: red">{{mostReduced.reduction}}</span></span></p>
+
+    <Graph v-if="chartData" :data="chartData" :options="options"/>
+    
     <DataTable v-if="populationData.data.length" :headers="populationData.headers" :data="populationData.data" />
+    
     
   </div>
 </template>
 
 <script>
-import { parseFile } from './parseFile';
+import { parseFile } from '../utils/parseFile';
 import DataTable from './PopulationTable.vue';
-import {analyzePopulation} from './analyzePopulation'
+import {analyzePopulation} from '../utils/analyzePopulation'
+import Graph from './Graph.vue';
+import preparingData from '../utils/preparingData'
 
 export default {
   name: 'Population',
   components: {
-    DataTable
+    DataTable,
+    Graph
   },
   data() {
     return {
@@ -25,7 +34,18 @@ export default {
         headers: [],
         data: []
       },
-      mostReduced : ''
+      mostReduced : '',
+      chartData: null,
+      options:{
+        plugins :{
+          legend: {
+            position: 'bottom',
+          },
+          labels: {
+            display: 'none'
+          }
+        }
+      }
     };
   },
   methods: {
@@ -38,9 +58,10 @@ export default {
         const text = e.target.result;
         this.populationData = parseFile(text);
         this.mostReduced = analyzePopulation(this.populationData)
+        this.chartData = preparingData(this.populationData)
       };
       reader.readAsText(file);
-    }
+    },
   }
 };
 </script>
