@@ -11,6 +11,7 @@
 <script>
 import Population from './components/Population.vue';
 import Emissions from './components/Emissions.vue';
+// import Test from './components/Test.vue'
 
 export default {
   name: 'App',
@@ -20,7 +21,7 @@ export default {
   },
   data() {
     return {
-      currentView: 'Population'
+      currentView: 'Emissions'
     };
   }
 };
