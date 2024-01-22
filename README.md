@@ -1,35 +1,19 @@
-# .
+# СИСТЕМЫ КОНТРОЛЯ ВЕРСИЙ (VCS)
 
-This template should help get you started developing with Vue 3 in Vite.
+Было разработано приложения для загрузки, анализа и визуализации данных из файлов. Данные показывают динамику численности населения РФ и выброса парниковых газов.
 
-## Recommended IDE Setup
+Для того чтобы запустить приложение, в терминале, в папке с проектом:
+- npm install
+- npm run dev
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Вариант 12
+Пользователь открывает файл с данными о выбросах парниковых газов в России за
+последние 15 лет. Вывести эту информацию на экран в удобном формате. Также по этим
+данным построить графики. Вычислить выбросы какого газа за 15 лет снизились больше всего,
+а какого меньше всего.
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## Вариант 14
+Пользователь открывает файл с данными о численности населении по субъектам в
+России за последние 15 лет. Вывести эту информацию на экран в удобном формате. Также по
+этим данным построить графики. Вычислить в каком субъекте РФ за 15 лет численность
+снизилась больше всего.
